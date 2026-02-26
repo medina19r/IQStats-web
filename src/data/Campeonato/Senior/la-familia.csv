@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition
+la-familia-camp-senior,La Familia,LF,#8B0000,São Vicente,2015,Pavilhão Polideportivo,Senior,Campeonato
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo
+1,9,Carlos Mendes,Ala,193,27,23.1,7.4,4.1,🏀
+2,7,Pedro Santos,Base,184,25,18.9,4.5,7.2,🏀
+3,11,Roberto Silva,Pivô,208,30,16.2,11.5,2.0,🏀
+4,8,Mário Lima,Ala,189,24,15.4,5.8,4.2,🏀
+5,5,Luís Costa,Armador,176,21,12.1,2.9,7.5,🏀
+6,10,João Pires,Ala,187,26,14.3,5.1,4.0,🏀
+7,6,Ricardo Jorge,Pivô,199,28,12.8,8.7,1.6,🏀
+8,12,Fábio Rodrigues,Base,182,23,10.2,2.6,5.5,🏀

@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition,coach,assistantCoach
+atl-senior-abert,Atlético,ATL,#FF4444,São Vicente,2008,Pavilhão Central,Senior,TorneioAbertura,Carlos Ferreira,Manuel Rodrigues
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo,isTopPlayer
+1,10,Bruno Alves,Ala,194,27,23.5,7.2,3.8,🏀,true
+2,8,Vítor Hugo,Base,183,25,19.2,3.9,6.9,🏀,true
+3,12,Rui Martins,Pivô,207,30,16.8,10.5,1.6,🏀,false
+4,7,Nelson Dias,Ala,187,24,15.4,5.3,3.7,🏀,false
+5,5,Samuel Costa,Armador,177,22,12.8,2.5,7.1,🏀,false
+6,9,Jerónimo Silva,Ala,192,26,14.1,4.8,3.3,🏀,false
+7,11,Tomé Rodrigues,Pivô,201,28,12.5,8.9,1.5,🏀,false
+8,6,Ivo Norton,Base,179,21,10.9,2.6,5.7,🏀,false

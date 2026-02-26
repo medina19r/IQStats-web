@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition,coach,assistantCoach
+crz-sub18-abert,Cruzeiros,CRZ,#FFD700,Santa Catarina,2005,Pavilhão de Cova do Moinho,Sub18,TorneioAbertura,José Carlos,Ana Silva
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo,isTopPlayer
+1,10,Lucas Mendes,Ala,188,17,22.1,5.9,3.5,🏀,true
+2,8,Guilherme Santos,Base,178,16,18.5,3.8,6.2,🏀,true
+3,12,Daniel Ferreira,Pivô,198,18,15.2,8.1,1.6,🏀,false
+4,7,Pedro Lima,Ala,182,17,14.2,4.5,3.1,🏀,false
+5,5,João Costa,Armador,174,16,12.1,2.3,5.8,🏀,false
+6,9,Henrique Dias,Ala,180,17,13.5,4.1,2.9,🏀,false
+7,11,Rodrigo Rodrigues,Pivô,192,18,11.2,7.2,1.2,🏀,false
+8,6,Rúben Silva,Base,172,16,10.2,2.0,4.5,🏀,false

@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition
+cruzeiros-abert-senior,Cruzeiros,CRZ,#FFD700,São Vicente,2008,Pavilhão do Mindelo,Senior,TorneioAbertura
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo
+1,8,José Pires,Ala,191,26,20.1,6.5,3.8,🏀
+2,10,Manuel Silva,Base,183,24,16.8,4.1,6.5,🏀
+3,12,Rui Jorge,Pivô,200,29,13.9,8.9,1.7,🏀
+4,7,Tiago Santos,Ala,187,23,14.7,4.8,3.9,🏀
+5,5,Fernando Lima,Armador,177,20,10.9,2.4,6.3,🏀
+6,9,Nuno Costa,Ala,185,25,12.8,4.3,3.5,🏀
+7,6,Hugo Rodrigues,Pivô,196,27,11.2,7.2,1.4,🏀
+8,11,Bruno Ferreira,Base,179,22,9.5,2.1,4.8,🏀

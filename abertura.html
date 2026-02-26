@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneio de Abertura 2026 - ARBSV</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/tournament.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🏀</span>
+                <span class="logo-text">ARBSV</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="abertura.html" class="nav-link active">Abertura</a></li>
+                <li><a href="copa.html" class="nav-link">Copa</a></li>
+                <li><a href="Campeonato.html" class="nav-link">Campeonato</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-tournament">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="tournament-badge">🏆</div>
+            <h1 class="hero-title">Torneio de Abertura 2026</h1>
+            <p class="hero-subtitle">Associação Regional de Basquetebol de São Vicente</p>
+            <div class="tournament-dates">
+                <span>07 Fevereiro - 14 Março 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Selection -->
+    <section class="category-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" data-category="senior">Sénior</button>
+                <button class="tab-btn" data-category="sub18">Sub-18</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Groups Section (hidden for Sub-18) -->
+    <section class="groups-section" id="groups-section">
+        <div class="container">
+            <h2 class="section-title">Grupos</h2>
+            <div class="groups-grid" id="groups-grid">
+                <!-- Groups will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Standings Section -->
+    <section class="standings-section" id="standings-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Classificação</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="standings-table-wrapper">
+                <table class="standings-table">
+                    <thead>
+                        <tr>
+                            <th class="col-pos">Pos</th>
+                            <th class="col-team">Equipa</th>
+                            <th class="col-games">J</th>
+                            <th class="col-wins">V</th>
+                            <th class="col-losses">D</th>
+                            <th class="col-points">Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standings-body">
+                        <!-- Standings will be loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section - Similar to Index -->
+    <section class="games-section" id="games">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Calendário de Jogos</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="games-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="finished">Concluídos</button>
+                <button class="filter-btn" data-filter="upcoming">Próximos</button>
+                <button class="filter-btn" data-filter="live">Ao Vivo</button>
+            </div>
+            <div class="games-grid" id="games-grid">
+                <!-- Games will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section class="teams-section">
+        <div class="container">
+            <h2 class="section-title">Equipas</h2>
+            <div class="teams-grid" id="teams-grid">
+                <!-- Teams will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Detail Modal -->
+    <div class="modal" id="team-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <div class="team-header-info">
+                    <div class="team-emblem" id="modal-team-emblem">ALB</div>
+                    <div class="team-info">
+                        <h2 id="modal-team-name">Team Name</h2>
+                        <p id="modal-team-category">Categoria</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- Coaching Staff -->
+                <div class="coaching-staff">
+                    <div class="coach-box">
+                        <span class="coach-label">Treinador</span>
+                        <span class="coach-name" id="modal-coach">-</span>
+                    </div>
+                    <div class="coach-box">
+                        <span class="coach-label">Adjunto</span>
+                        <span class="coach-name" id="modal-assistant-coach">-</span>
+                    </div>
+                </div>
+                
+                <div class="team-stats-summary">
+                    <div class="stat-box">
+                        <span class="stat-value" id="modal-total-players">0</span>
+                        <span class="stat-label">Jogadores</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="modal-avg-points">0</span>
+                        <span class="stat-label">Pontos Médios</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="modal-avg-rebounds">0</span>
+                        <span class="stat-label">Rebatidas Médias</span>
+                    </div>
+                </div>
+                
+                <h3 class="modal-section-title">Top Jogadores</h3>
+                <div class="top-players" id="top-players">
+                    <!-- Top players will be loaded dynamically -->
+                </div>
+                
+                <h3 class="modal-section-title">Plantel Completo</h3>
+                <div class="players-list" id="players-list">
+                    <!-- Players will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🏀</span>
+                    <span class="logo-text">ARBSV</span>
+                </div>
+                <p class="footer-text">Associação Regional de Basquetebol de São Vicente</p>
+                <p class="footer-copyright">© 2026 ARBSV. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/data/games-abertura.js"></script>
+    <script src="src/js/team-data-loader.js"></script>
+    <script src="src/js/abertura.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campeonato Regional - ARBSV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/tournament.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🏀</span>
+                <span class="logo-text">ARBSV</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="Campeonato.html" class="nav-link active">Campeonato</a></li>
+                <li><a href="abertura.html" class="nav-link">T. Abertura</a></li>
+                <li><a href="#games" class="nav-link">Jogos</a></li>
+                <li><a href="#standings" class="nav-link">Classificação</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tournament-hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="tournament-badge-large">🏆</div>
+            <h1 class="hero-title">Campeonato Regional de Basquetebol</h1>
+            <p class="hero-subtitle">2024 • São Vicente</p>
+            <div class="tournament-meta">
+                <div class="meta-item">
+                    <span class="meta-icon">👥</span>
+                    <span class="meta-value">8 Equipas</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">🎮</span>
+                    <span class="meta-value">28 Jogos</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">📅</span>
+                    <span class="meta-value">Jan - Abr</span>
+                </div>
+            </div>
+            <div class="league-format">
+                <span class="format-badge">Temporada Regular + Playoffs</span>
+            </div>
+            <div class="category-tabs">
+                <button class="category-btn active" data-category="senior">Senior</button>
+                <button class="category-btn" data-category="sub18">Sub 18</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regular Season Standings -->
+    <section class="standings-section" id="standings">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Temporada Regular</h2>
+                <p class="section-subtitle">Todas as equipas jogam 2 volte (Casa e Fora)</p>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="standings-wrapper">
+                <table class="standings-table league-table">
+                    <thead>
+                        <tr>
+                            <th class="col-pos">#</th>
+                            <th class="col-team">Equipa</th>
+                            <th class="col-games">J</th>
+                            <th class="col-home">V Casa</th>
+                            <th class="col-away">V Fora</th>
+                            <th class="col-wins">V</th>
+                            <th class="col-losses">D</th>
+                            <th class="col-pts-f">PF</th>
+                            <th class="col-pts-a">PC</th>
+                            <th class="col-diff">+/-</th>
+                            <th class="col-points">Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="regular-standings">
+                        <!-- Regular season standings will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="playoffs-info">
+                <div class="info-box">
+                    <span class="info-icon">🔒</span>
+                    <span class="info-text">Top 4 classificadas para os Playoffs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="tournament-games" id="games">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Jogos - Temporada Regular</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="round-selector">
+                <button class="round-btn active" data-round="all">Todos</button>
+                <button class="round-btn" data-round="1">1ª Volta</button>
+                <button class="round-btn" data-round="2">2ª Volta</button>
+            </div>
+            
+            <div class="games-tabs">
+                <button class="games-tab active" data-tab="previous">Realizados</button>
+                <button class="games-tab" data-tab="upcoming">Próximos</button>
+            </div>
+            
+            <div class="games-grid" id="games-grid">
+                <!-- Games will be dynamically inserted -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Playoffs Section -->
+    <section class="playoffs-section" id="playoffs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Playoffs - Fase Final</h2>
+                <p class="section-subtitle">Top 4 equipas battle for the championship</p>
+                <div class="title-underline"></div>
+            </div>
+            
+            <!-- Quarterfinals -->
+            <div class="playoff-round">
+                <h3 class="playoff-round-title">Quartos de Final (Melhor de 3)</h3>
+                <div class="playoff-series">
+                    <!-- QF1 -->
+                    <div class="series-card">
+                        <div class="series-header">
+                            <span class="series-number">QF1</span>
+                            <span class="series-status finished">Concluído</span>
+                        </div>
+                        <div class="series-teams">
+                            <div class="series-team winner">
+                                <span class="team-seed">1</span>
+                                <span class="team-name">Todos Blacks</span>
+                                <span class="team-wins">2</span>
+                            </div>
+                            <div class="series-team">
+                                <span class="team-seed">8</span>
+                                <span class="team-name">Santo Antão</span>
+                                <span class="team-wins">0</span>
+                            </div>
+                        </div>
+                        <div class="series-games">
+                            <div class="game-result">
+                                <span class="result-score">78 - 52</span>
+                                <span class="result-date">J1</span>
+                            </div>
+                            <div class="game-result">
+                                <span class="result-score">85 - 68</span>
+                                <span class="result-date">J2</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- QF2 -->
+                    <div class="series-card">
+                        <div class="series-header">
+                            <span class="series-number">QF2</span>
+                            <span class="series-status finished">Concluído</span>
+                        </div>
+                        <div class="series-teams">
+                            <div class="series-team winner">
+                                <span class="team-seed">4</span>
+                                <span class="team-name">Atlantic</span>
+                                <span class="team-wins">2</span>
+                            </div>
+                            <div class="series-team">
+                                <span class="team-seed">5</span>
+                                <span class="team-name">Ribeira Grande</span>
+                                <span class="team-wins">1</span>
+                            </div>
+                        </div>
+                        <div class="series-games">
+                            <div class="game-result">
+                                <span class="result-score">72 - 68</span>
+                                <span class="result-date">J1</span>
+                            </div>
+                            <div class="game-result">
+                                <span class="result-score">65 - 78</span>
+                                <span class="result-date">J2</span>
+                            </div>
+                            <div class="game-result">
+                                <span class="result-score">81 - 75</span>
+                                <span class="result-date">J3</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- QF3 -->
+                    <div class="series-card">
+                        <div class="series-header">
+                            <span class="series-number">QF3</span>
+                            <span class="series-status finished">Concluído</span>
+                        </div>
+                        <div class="series-teams">
+                            <div class="series-team winner">
+                                <span class="team-seed">3</span>
+                                <span class="team-name">La Familia</span>
+                                <span class="team-wins">2</span>
+                            </div>
+                            <div class="series-team">
+                                <span class="team-seed">6</span>
+                                <span class="team-name">Cruzeiros</span>
+                                <span class="team-wins">0</span>
+                            </div>
+                        </div>
+                        <div class="series-games">
+                            <div class="game-result">
+                                <span class="result-score">82 - 68</span>
+                                <span class="result-date">J1</span>
+                            </div>
+                            <div class="game-result">
+                                <span class="result-score">75 - 62</span>
+                                <span class="result-date">J2</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- QF4 -->
+                    <div class="series-card">
+                        <div class="series-header">
+                            <span class="series-number">QF4</span>
+                            <span class="series-status finished">Concluído</span>
+                        </div>
+                        <div class="series-teams">
+                            <div class="series-team winner">
+                                <span class="team-seed">2</span>
+                                <span class="team-name">Académica</span>
+                                <span class="team-wins">2</span>
+                            </div>
+                            <div class="series-team">
+                                <span class="team-seed">7</span>
+                                <span class="team-name">Mindelo Lions</span>
+                                <span class="team-wins">1</span>
+                            </div>
+                        </div>
+                        <div class="series-games">
+                            <div class="game-result">
+                                <span class="result-score">70 - 65</span>
+                                <span class="result-date">J1</span>
+                            </div>
+                            <div class="game-result">
+                                <span class="result-score">62 - 78</span>
+                                <span class="result-date">J2</span>
+                            </div>
+                            <div class="game-result">
+                                <span class="result-score">85 - 72</span>
+                                <span class="result-date">J3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Semifinals -->
+            <div class="playoff-round">
+                <h3 class="playoff-round-title">Meias Finais (Melhor de 3)</h3>
+                <div class="playoff-series semifinals">
+                    <!-- SF1 -->
+                    <div class="series-card">
+                        <div class="series-header">
+                            <span class="series-number">SF1</span>
+                            <span class="series-status finished">Concluído</span>
+                        </div>
+                        <div class="series-teams">
+                            <div class="series-team winner">
+                                <span class="team-seed">1</span>
+                                <span class="team-name">Todos Blacks</span>
+                                <span class="team-wins">2</span>
+                            </div>
+                            <div class="series-team">
+                                <span class="team-seed">4</span>
+                                <span class="team-name">Atlantic</span>
+                                <span class="team-wins">0</span>
+                            </div>
+                        </div>
+                        <div class="series-games">
+                            <div class="game-result">
+                                <span class="result-score">88 - 75</span>
+                                <span class="result-date">J1</span>
+                            </div>
+                            <div class="game-result">
+                                <span class="result-score">82 - 68</span>
+                                <span class="result-date">J2</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SF2 -->
+                    <div class="series-card">
+                        <div class="series-header">
+                            <span class="series-number">SF2</span>
+                            <span class="series-status live">Ao Vivo</span>
+                        </div>
+                        <div class="series-teams">
+                            <div class="series-team">
+                                <span class="team-seed">2</span>
+                                <span class="team-name">Académica</span>
+                                <span class="team-wins">1</span>
+                            </div>
+                            <div class="series-team winner">
+                                <span class="team-seed">3</span>
+                                <span class="team-name">La Familia</span>
+                                <span class="team-wins">1</span>
+                            </div>
+                        </div>
+                        <div class="series-games">
+                            <div class="game-result">
+                                <span class="result-score">72 - 68</span>
+                                <span class="result-date">J1</span>
+                            </div>
+                            <div class="game-result">
+                                <span class="result-score">65 - 78</span>
+                                <span class="result-date">J2</span>
+                            </div>
+                            <div class="game-result upcoming">
+                                <span class="result-score">- : -</span>
+                                <span class="result-date">J3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Finals -->
+            <div class="playoff-round final-round">
+                <h3 class="playoff-round-title">🏆 Final (Melhor de 5)</h3>
+                <div class="final-series">
+                    <div class="final-card">
+                        <div class="final-teams">
+                            <div class="final-team">
+                                <div class="final-seed">1</div>
+                                <div class="final-info">
+                                    <span class="final-team-name">Todos Blacks</span>
+                                    <span class="final-team-record">14-2</span>
+                                </div>
+                            </div>
+                            <div class="final-vs">VS</div>
+                            <div class="final-team tbd">
+                                <div class="final-seed">?</div>
+                                <div class="final-info">
+                                    <span class="final-team-name">TBD</span>
+                                    <span class="final-team-record">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="final-games">
+                            <div class="final-game">
+                                <span class="game-label">Jogo 1</span>
+                                <span class="game-date">28/03/2024</span>
+                                <span class="game-result">85 - 72</span>
+                            </div>
+                            <div class="final-game">
+                                <span class="game-label">Jogo 2</span>
+                                <span class="game-date">29/03/2024</span>
+                                <span class="game-result">78 - 65</span>
+                            </div>
+                            <div class="final-game upcoming">
+                                <span class="game-label">Jogo 3</span>
+                                <span class="game-date">01/04/2024</span>
+                                <span class="game-result">- : -</span>
+                            </div>
+                            <div class="final-game tbd">
+                                <span class="game-label">Jogo 4*</span>
+                                <span class="game-date">03/04/2024</span>
+                                <span class="game-result">- : -</span>
+                            </div>
+                            <div class="final-game tbd">
+                                <span class="game-label">Jogo 5*</span>
+                                <span class="game-date">05/04/2024</span>
+                                <span class="game-result">- : -</span>
+                            </div>
+                        </div>
+                        <div class="final-note">* Se necessário</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">
+                    <span class="logo-icon">🏀</span>
+                    <span class="logo-text">ARBSV</span>
+                </a>
+                <p class="footer-text">Associação Regional de Basquetebol de São Vicente</p>
+                <p class="footer-copyright">© 2024 ARBSV. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="src/js/teams.js"></script>
+    <script src="src/data/games.js"></script>
+    <script src="src/js/copa.js"></script>
+    <script>
+        // Regular Season Standings Data (8 teams, 2 rounds = 14 games each)
+        const regularStandings = [
+            { pos: 1, team: 'Todos Blacks', seed: 1, wins: 12, losses: 2, homeWins: 7, awayWins: 5, pf: 1156, pa: 982, pts: 26 },
+            { pos: 2, team: 'Académica', seed: 2, wins: 10, losses: 4, homeWins: 6, awayWins: 4, pf: 1085, pa: 995, pts: 24 },
+            { pos: 3, team: 'La Familia', seed: 3, wins: 9, losses: 5, homeWins: 5, awayWins: 4, pf: 1042, pa: 998, pts: 23 },
+            { pos: 4, team: 'Atlantic', seed: 4, wins: 8, losses: 6, homeWins: 5, awayWins: 3, pf: 1012, pa: 1005, pts: 22 },
+            { pos: 5, team: 'Cruzeiros', seed: 5, wins: 7, losses: 7, homeWins: 4, awayWins: 3, pf: 985, pa: 1012, pts: 21 },
+            { pos: 6, team: 'Mindelo Lions', seed: 6, wins: 5, losses: 9, homeWins: 3, awayWins: 2, pf: 945, pa: 1025, pts: 19 },
+            { pos: 7, team: 'Ribeira Grande', seed: 7, wins: 3, losses: 11, homeWins: 2, awayWins: 1, pf: 885, pa: 1075, pts: 17 },
+            { pos: 8, team: 'Santo Antão', seed: 8, wins: 2, losses: 12, homeWins: 1, awayWins: 1, pf: 825, pa: 1158, pts: 16 }
+        ];
+
+        // Render regular season standings
+        function renderRegularStandings() {
+            const tbody = document.getElementById('regular-standings');
+            tbody.innerHTML = regularStandings.map(team => {
+                const diff = team.pf - team.pa;
+                const isTop4 = team.pos <= 4;
+                return `
+                    <tr class="${isTop4 ? 'playoff-spot' : ''} ${team.pos === 1 ? 'first-place' : ''}">
+                        <td class="col-pos">
+                            <span class="position">${team.pos}</span>
+                            ${isTop4 ? '<span class="playoff-badge">🔒</span>' : ''}
+                        </td>
+                        <td class="col-team">
+                            <span class="team-seed">${team.seed}</span>
+                            <span class="team-name-cell">${team.team}</span>
+                        </td>
+                        <td>${team.wins + team.losses}</td>
+                        <td>${team.homeWins}</td>
+                        <td>${team.awayWins}</td>
+                        <td>${team.wins}</td>
+                        <td>${team.losses}</td>
+                        <td>${team.pf}</td>
+                        <td>${team.pa}</td>
+                        <td class="${diff >= 0 ? 'positive' : 'negative'}">${diff > 0 ? '+' : ''}${diff}</td>
+                        <td><strong>${team.pts}</strong></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderRegularStandings();
+        });
+    </script>
+</body>
+</html>

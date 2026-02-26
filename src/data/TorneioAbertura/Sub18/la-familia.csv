@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition,coach,assistantCoach
+lfa-sub18-abert,La Família,LFA,#8B0000,São Vicente,2015,Pavilhão do Norte,Sub18,TorneioAbertura,Filipe Borges,Daniel Costa
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo,isTopPlayer
+1,10,Martim Moreira,Ala,186,17,19.8,5.5,3.1,🏀,true
+2,8,Francisco Santos,Base,176,16,16.9,3.4,5.9,🏀,true
+3,12,Diogo Lima,Pivô,193,18,14.5,7.8,1.4,🏀,false
+4,7,Gabriel Ferreira,Ala,179,17,13.2,4.0,2.7,🏀,false
+5,5,Salvador Costa,Armador,171,16,10.8,1.9,5.2,🏀,false
+6,9,Beatriz Rodrigues,Ala,177,17,11.9,3.5,2.6,🏀,false
+7,11,Vasco Silva,Pivô,189,18,9.8,6.5,1.0,🏀,false
+8,6,Duarte Costa,Base,169,16,9.1,1.7,4.0,🏀,false

@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition,coach,assistantCoach
+crz-senior-abert,Cruzeiros,CRZ,#FFD700,Santa Catarina,2005,Pavilhão de Cova do Moinho,Senior,TorneioAbertura,José Carlos,Ana Silva
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo,isTopPlayer
+1,10,Carlos Mendes,Ala,192,27,24.1,6.5,4.2,🏀,true
+2,8,Miguel Santos,Base,185,25,19.8,3.8,7.1,🏀,true
+3,12,Luís Ferreira,Pivô,203,29,16.5,9.8,1.5,🏀,false
+4,7,Pedro Lima,Ala,188,23,15.9,5.2,3.9,🏀,false
+5,5,Rui Costa,Armador,180,21,13.2,2.6,6.5,🏀,false
+6,9,Nuno Dias,Ala,190,26,14.3,4.7,3.2,🏀,false
+7,11,Bruno Rodrigues,Pivô,198,24,12.1,7.9,1.4,🏀,false
+8,6,André Silva,Base,178,22,11.5,2.3,5.8,🏀,false

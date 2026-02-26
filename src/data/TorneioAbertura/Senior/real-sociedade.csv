@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition,coach,assistantCoach
+rso-senior-abert,Real Sociedade,RSO,#1E7D32,São Vicente,2012,Pavilhão do Estádio,Senior,TorneioAbertura,António Lima,Sandra Borges
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo,isTopPlayer
+1,10,Manuel Júnior,Ala,196,28,22.7,6.9,3.6,🏀,true
+2,8,Luís António,Base,186,26,18.9,4.3,6.7,🏀,true
+3,12,Fernando Silva,Pivô,204,29,15.2,9.1,1.7,🏀,false
+4,7,Carlos Eduardo,Ala,189,23,14.5,4.9,3.8,🏀,false
+5,5,Roberto Alves,Armador,181,21,13.1,2.9,6.3,🏀,false
+6,9,Juliano Costa,Ala,193,27,13.8,5.1,3.4,🏀,false
+7,11,Marcos Paulo,Pivô,200,25,11.5,7.8,1.4,🏀,false
+9,6,Gilberto Santos,Base,180,24,10.6,2.7,5.4,🏀,false

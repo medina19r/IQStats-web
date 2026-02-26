@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition
+todos-blacks-camp-senior,Todos Blacks,TB,#000000,São Vicente,2010,Pavilhão Polideportivo de São Vicente,Senior,Campeonato
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo
+1,10,Ricardo Pires,Ala,195,26,22.3,7.1,3.5,🏀
+2,8,Marco Silva,Base,182,24,18.5,4.2,6.8,🏀
+3,12,Paulo Jorge,Pivô,205,28,15.8,10.2,1.9,🏀
+4,7,Ricardo Santos,Ala,190,22,16.2,5.5,4.1,🏀
+5,5,Bruno Ferreira,Armador,178,20,12.4,2.8,7.2,🏀
+6,9,João Lima,Ala,188,25,14.7,4.9,3.8,🏀
+7,11,Miguel Rodrigues,Pivô,198,27,11.3,8.6,1.2,🏀
+8,6,Pedro Costa,Base,180,23,10.8,2.5,5.9,🏀

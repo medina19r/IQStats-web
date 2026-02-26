@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARBSV - Associação Regional de Basquetebol de São Vicente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/home.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🏀</span>
+                <span class="logo-text">ARBSV</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#tournaments" class="nav-link">Campeonatos</a></li>
+                <li><a href="#news" class="nav-link">Notícias</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">🏀</span>
+                <span class="badge-text">Associação Regional</span>
+            </div>
+            <h1 class="hero-title">Basquetebol de São Vicente</h1>
+            <p class="hero-subtitle">O Melhor Basquetebol de Cabo Verde</p>
+            
+            <div class="hero-cta">
+                <a href="#tournaments" class="btn-primary">Ver Campeonatos</a>
+                <a href="#about" class="btn-secondary">Saiba Mais</a>
+            </div>
+            
+            <div class="hero-scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">🏆</span>
+                    <span class="stat-number" data-count="2">0</span>
+                    <span class="stat-label">Campeonatos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">👥</span>
+                    <span class="stat-number" data-count="8">0</span>
+                    <span class="stat-label">Equipas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🎮</span>
+                    <span class="stat-number" data-count="44">0</span>
+                    <span class="stat-label">Jogos/Época</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-number" data-count="150">0</span>
+                    <span class="stat-label">Atletas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournaments Section -->
+    <section class="tournaments-section" id="tournaments">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Campeonatos</h2>
+                <p class="section-subtitle">As principais competições da temporada 2024</p>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="tournaments-grid">
+                <!-- Championship Card -->
+                <a href="Campeonato.html" class="tournament-card championship">
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-badge">🏆</div>
+                        <h3 class="card-title">Campeonato Regional</h3>
+                        <p class="card-subtitle">Principal competição da época</p>
+                        <div class="card-details">
+                            <div class="detail">
+                                <span class="detail-label">Equipas</span>
+                                <span class="detail-value">8</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Jogos</span>
+                                <span class="detail-value">28</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Período</span>
+                                <span class="detail-value">Jan-Abr</span>
+                            </div>
+                        </div>
+                        <div class="card-cta">
+                            <span>Ver Campeonato</span>
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="card-glow"></div>
+                </a>
+                
+                <!-- Opening Tournament Card -->
+                <a href="abertura.html" class="tournament-card opening">
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-badge">🎯</div>
+                        <h3 class="card-title">Torneio de Abertura</h3>
+                        <p class="card-subtitle"> dá o pontapé inicial à época</p>
+                        <div class="card-details">
+                            <div class="detail">
+                                <span class="detail-label">Equipas</span>
+                                <span class="detail-value">8</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Jogos</span>
+                                <span class="detail-value">16</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Período</span>
+                                <span class="detail-value">Fev-Mar</span>
+                            </div>
+                        </div>
+                        <div class="card-cta">
+                            <span>Ver Torneio</span>
+                            <span class="arrow">→</span>
+                        </div>
+                    </div>
+                    <div class="card-glow"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section class="featured-section" id="games">
+        <div class="container">
+            <div class="section-header light">
+                <h2 class="section-title">Próximos Jogos</h2>
+                <p class="section-subtitle">Não perca os próximos encontros</p>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="featured-games">
+                <div class="featured-game">
+                    <div class="game-date-badge">
+                        <span class="day">15</span>
+                        <span class="month">FEV</span>
+                    </div>
+                    <div class="game-info">
+                        <span class="competition">Campeonato</span>
+                        <span class="venue">Pavilhão Polideportivo</span>
+                    </div>
+                    <div class="game-teams">
+                        <div class="team">
+                            <div class="team-logo" style="background: linear-gradient(135deg, #000, #333)">TB</div>
+                            <span class="team-name">Todos Blacks</span>
+                        </div>
+                        <span class="vs">VS</span>
+                        <div class="team">
+                            <div class="team-logo" style="background: linear-gradient(135deg, #1E3A5F, #2a4a73)">ACA</div>
+                            <span class="team-name">Académica</span>
+                        </div>
+                    </div>
+                    <div class="game-time">19:00</div>
+                </div>
+                
+                <div class="featured-game">
+                    <div class="game-date-badge">
+                        <span class="day">16</span>
+                        <span class="month">FEV</span>
+                    </div>
+                    <div class="game-info">
+                        <span class="competition">Torneio Abertura</span>
+                        <span class="venue">Ginásio Académico</span>
+                    </div>
+                    <div class="game-teams">
+                        <div class="team">
+                            <div class="team-logo" style="background: linear-gradient(135deg, #00CED1, #008B8B)">ATL</div>
+                            <span class="team-name">Atlantic</span>
+                        </div>
+                        <span class="vs">VS</span>
+                        <div class="team">
+                            <div class="team-logo" style="background: linear-gradient(135deg, #FFD700, #DAA520)">CRZ</div>
+                            <span class="team-name">Cruzeiros</span>
+                        </div>
+                    </div>
+                    <div class="game-time">18:00</div>
+                </div>
+                
+                <div class="featured-game">
+                    <div class="game-date-badge">
+                        <span class="day">18</span>
+                        <span class="month">FEV</span>
+                    </div>
+                    <div class="game-info">
+                        <span class="competition">Campeonato</span>
+                        <span class="venue">Pavilhão do Mindelo</span>
+                    </div>
+                    <div class="game-teams">
+                        <div class="team">
+                            <div class="team-logo" style="background: linear-gradient(135deg, #8B0000, #5c0000)">LF</div>
+                            <span class="team-name">La Familia</span>
+                        </div>
+                        <span class="vs">VS</span>
+                        <div class="team">
+                            <div class="team-logo" style="background: linear-gradient(135deg, #10B981, #0d9668)">ML</div>
+                            <span class="team-name">Mindelo Lions</span>
+                        </div>
+                    </div>
+                    <div class="game-time">19:00</div>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="Campeonato.html" class="btn-primary">Ver Todos os Jogos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section" id="news">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Últimas Notícias</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <span class="news-badge">Resultado</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">12 Fevereiro 2024</span>
+                        <h3 class="news-title">Todos Blacks vence clássico ante Académica</h3>
+                        <p class="news-excerpt">Em mais um jogo vibrante do Campeonato Regional...</p>
+                        <a href="#" class="news-link">Ler mais →</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <span class="news-badge">Próximo</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">10 Fevereiro 2024</span>
+                        <h3 class="news-title">Torneio de Abertura reaches semifinals</h3>
+                        <p class="news-excerpt">As equipas classificadas já conhecem os adversários...</p>
+                        <a href="#" class="news-link">Ler mais →</a>
+                    </div>
+                </article>
+                
+                <article class="news-card">
+                    <div class="news-image">
+                        <span class="news-badge">Equipa</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">08 Fevereiro 2024</span>
+                        <h3 class="news-title">Atlantic junta-se ao Campeonato</h3>
+                        <p class="news-excerpt">Nova equipa bringing fresh talent to the league...</p>
+                        <a href="#" class="news-link">Ler mais →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre a ARBSV</h2>
+                    <div class="title-underline left"></div>
+                    <p>A Associação Regional de Basquetebol de São Vicente (ARBSV) é a entidade responsável pela organização e promoção do basquetebol na ilha de São Vicente, Cabo Verde.</p>
+                    <p>Fundada com o objetivo de desenvolver o desporto na região, a ARBSV organiza anualmente os principais torneios de basquetebol, promovendo competição de excelência e formação de jovens atletas.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <span class="feature-icon">🎯</span>
+                            <span class="feature-text">Formação de Atletas</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🏅</span>
+                            <span class="feature-text">Competições Oficiais</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🤝</span>
+                            <span class="feature-text">Integração Comunitária</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <span>🏀</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon">🏀</span>
+                        <span class="logo-text">ARBSV</span>
+                    </a>
+                    <p class="footer-tagline">Associação Regional de Basquetebol de São Vicente</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Campeonatos</h4>
+                    <a href="Campeonato.html">Campeonato Regional</a>
+                    <a href="abertura.html">Torneio de Abertura</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contactos</h4>
+                    <p>📍 São Vicente, Cabo Verde</p>
+                    <p>📧 arbsv@email.com</p>
+                    <p>📞 +238 123 4567</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ARBSV. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/js/home.js"></script>
+</body>
+</html>

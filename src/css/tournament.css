@@ -1,0 +1,1231 @@
+/* ========================================
+   Tournament Pages Styles
+   ARBSV - Basketball Association
+   ======================================== */
+
+/* CSS Variables */
+:root {
+    --primary-orange: #FF6B00;
+    --primary-orange-light: #FF8533;
+    --primary-orange-dark: #E55C00;
+    --black-dark: #0A0A0A;
+    --black-medium: #1A1A1A;
+    --black-light: #2D2D2D;
+    --gray-dark: #404040;
+    --gray-medium: #6B6B6B;
+    --gray-light: #A0A0A0;
+    --white: #FFFFFF;
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.35);
+    --shadow-orange: 0 0 30px rgba(255, 107, 0, 0.4);
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+    
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--black-dark);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    transition: var(--transition-normal);
+    border-bottom: 2px solid transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(26, 26, 26, 0.98);
+    border-bottom: 2px solid var(--primary-orange);
+    padding: 10px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 28px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 5px 0;
+    transition: var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-orange);
+    transition: var(--transition-normal);
+}
+
+.nav-link:hover {
+    color: var(--primary-orange);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary-orange);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: var(--transition-fast);
+}
+
+/* Tournament Hero */
+.hero-tournament {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1920&q=80') center/cover no-repeat;
+    padding-top: 80px;
+}
+
+.hero-tournament .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 10, 0.92) 0%,
+        rgba(26, 26, 26, 0.85) 50%,
+        rgba(255, 107, 0, 0.2) 100%
+    );
+}
+
+.hero-tournament .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.tournament-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 10, 0.92) 0%,
+        rgba(26, 26, 26, 0.85) 50%,
+        rgba(255, 107, 0, 0.2) 100%
+    );
+}
+
+.tournament-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.tournament-badge-large {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.tournament-hero .hero-title {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.tournament-hero .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.tournament-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.meta-icon {
+    font-size: 24px;
+}
+
+.meta-value {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Category Tabs */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.category-btn {
+    padding: 12px 40px;
+    background: transparent;
+    border: 2px solid var(--gray-dark);
+    border-radius: var(--radius-lg);
+    color: var(--gray-light);
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.category-btn:hover {
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+}
+
+.category-btn.active {
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
+    border-color: var(--primary-orange);
+    color: var(--white);
+    box-shadow: var(--shadow-orange);
+}
+
+/* Tournament Games Section */
+.tournament-games {
+    padding: 80px 0;
+    background: var(--black-dark);
+}
+
+.games-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.games-tab {
+    padding: 14px 35px;
+    background: var(--black-medium);
+    border: none;
+    border-radius: var(--radius-lg);
+    color: var(--gray-light);
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.games-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--primary-orange);
+    transition: var(--transition-normal);
+}
+
+.games-tab:hover {
+    color: var(--white);
+}
+
+.games-tab.active {
+    color: var(--white);
+    background: var(--black-light);
+}
+
+.games-tab.active::after {
+    width: 60%;
+}
+
+/* Group Standings Section */
+.group-standings {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--black-medium) 0%, var(--black-dark) 100%);
+}
+
+.groups-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.group-card {
+    background: var(--black-light);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    border: 1px solid var(--gray-dark);
+    transition: var(--transition-normal);
+}
+
+.group-card:hover {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.15);
+}
+
+.group-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-orange);
+    text-align: center;
+}
+
+.group-standings .standings-table {
+    background: transparent;
+}
+
+.group-standings .standings-table th {
+    background: transparent;
+    padding: 12px 10px;
+    font-size: 12px;
+    border-bottom: 1px solid var(--gray-dark);
+}
+
+.group-standings .standings-table td {
+    padding: 12px 10px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(64, 64, 64, 0.5);
+}
+
+.team-name-cell {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* Knockout Bracket Section */
+.knockout-section {
+    padding: 80px 0;
+    background: var(--black-dark);
+}
+
+.bracket-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+.bracket-round {
+    min-width: 220px;
+}
+
+.round-title {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-orange);
+}
+
+.bracket-matches {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bracket-match {
+    background: var(--black-medium);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    border: 1px solid var(--gray-dark);
+    position: relative;
+}
+
+.bracket-match.finished {
+    border-color: var(--gray-dark);
+}
+
+.bracket-match.upcoming {
+    border-color: var(--primary-orange);
+    border-style: dashed;
+}
+
+.bracket-match.final {
+    border-color: var(--primary-orange);
+    border-width: 2px;
+    background: linear-gradient(135deg, var(--black-medium), rgba(255, 107, 0, 0.1));
+}
+
+.match-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.match-team:first-child {
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--gray-dark);
+}
+
+.match-team.winner {
+    background: rgba(255, 107, 0, 0.15);
+}
+
+.match-team .team-name {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.match-team .team-score {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.match-team.winner .team-name,
+.match-team.winner .team-score {
+    color: var(--primary-orange);
+}
+
+.match-vs {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    padding: 5px 0;
+}
+
+.match-date {
+    text-align: center;
+    font-size: 11px;
+    color: var(--gray-light);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--gray-dark);
+}
+
+.final-round .bracket-match {
+    padding: 20px;
+}
+
+.final-round .match-team {
+    padding: 12px 15px;
+}
+
+.final-round .match-vs {
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.final-date {
+    font-size: 13px;
+    color: var(--primary-orange);
+    font-weight: 600;
+}
+
+/* Winner Box */
+.winner-box {
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 107, 0, 0.1));
+    border: 2px solid var(--primary-orange);
+    text-align: center;
+    padding: 25px;
+}
+
+.winner-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.winner-team .trophy {
+    font-size: 40px;
+}
+
+.winner-team .team-name {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+}
+
+/* Connecting Lines */
+.bracket-round:not(:last-child) .bracket-matches::after {
+    content: '→';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: var(--primary-orange);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .groups-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .bracket-container {
+        justify-content: flex-start;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tournament-hero .hero-title {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+    
+    .tournament-hero .hero-subtitle {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    
+    .tournament-meta {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .category-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .category-btn {
+        width: 200px;
+    }
+    
+    .games-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .games-tab {
+        width: 200px;
+    }
+}
+
+/* ========================================
+   Regular Season Table (FIBA Style)
+   ======================================== */
+
+.standings-section {
+    padding: 80px 0;
+    background: var(--black-dark);
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: var(--gray-light);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.standings-wrapper {
+    background: var(--black-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-top: 30px;
+}
+
+.league-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.league-table thead {
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
+}
+
+.league-table th {
+    padding: 15px 10px;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.league-table th.col-team {
+    text-align: left;
+}
+
+.league-table td {
+    padding: 14px 10px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--white);
+    border-bottom: 1px solid var(--gray-dark);
+}
+
+.league-table td.col-team {
+    text-align: left;
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+.league-table tbody tr {
+    transition: var(--transition-fast);
+}
+
+.league-table tbody tr:hover {
+    background: rgba(255, 107, 0, 0.1);
+}
+
+.league-table tbody tr.playoff-spot {
+    background: rgba(255, 107, 0, 0.08);
+}
+
+.league-table tbody tr.first-place {
+    background: rgba(255, 107, 0, 0.15);
+}
+
+.league-table tbody tr.first-place td:first-child {
+    color: var(--primary-orange);
+    font-weight: 700;
+}
+
+.position {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 16px;
+    display: inline-block;
+    min-width: 20px;
+}
+
+.team-seed {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: var(--gray-dark);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 8px;
+    color: var(--white);
+}
+
+.playoff-spot .team-seed {
+    background: var(--primary-orange);
+}
+
+.playoff-badge {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.col-pos { width: 60px; }
+.col-team { width: auto; }
+.col-games { width: 40px; }
+.col-home { width: 50px; }
+.col-away { width: 50px; }
+.col-wins { width: 40px; }
+.col-losses { width: 40px; }
+.col-pts-f { width: 50px; }
+.col-pts-a { width: 50px; }
+.col-diff { width: 50px; }
+.col-points { width: 50px; }
+
+.positive {
+    color: #10B981;
+}
+
+.negative {
+    color: #EF4444;
+}
+
+.playoffs-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 107, 0, 0.15);
+    padding: 12px 25px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--primary-orange);
+}
+
+.info-icon {
+    font-size: 18px;
+}
+
+.info-text {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Round Sections in Games Schedule */
+.round-section {
+    margin-bottom: 40px;
+}
+
+.round-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-orange);
+    text-align: center;
+}
+
+/* Round Selector */
+.round-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.round-btn {
+    padding: 10px 25px;
+    background: var(--black-medium);
+    border: 1px solid var(--gray-dark);
+    border-radius: var(--radius-md);
+    color: var(--gray-light);
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.round-btn:hover {
+    border-color: var(--primary-orange);
+    color: var(--white);
+}
+
+.round-btn.active {
+    background: var(--primary-orange);
+    border-color: var(--primary-orange);
+    color: var(--white);
+}
+
+/* League Format Badge */
+.league-format {
+    margin-bottom: 30px;
+}
+
+.format-badge {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.2);
+    border: 1px solid var(--primary-orange);
+    padding: 10px 25px;
+    border-radius: var(--radius-lg);
+    font-family: var(--font-heading);
+    font-size: 13px;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   Playoffs Section
+   ======================================== */
+
+.playoffs-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--black-medium) 0%, var(--black-dark) 100%);
+}
+
+.playoff-round {
+    margin-bottom: 50px;
+}
+
+.playoff-round-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-orange);
+}
+
+.playoff-series {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.playoff-series.semifinals {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.series-card {
+    background: var(--black-light);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    border: 1px solid var(--gray-dark);
+    transition: var(--transition-normal);
+}
+
+.series-card:hover {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 25px rgba(255, 107, 0, 0.2);
+}
+
+.series-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray-dark);
+}
+
+.series-number {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+}
+
+.series-status {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.series-status.finished {
+    background: rgba(107, 107, 107, 0.2);
+    color: var(--gray-light);
+}
+
+.series-status.live {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10B981;
+    animation: pulse 1.5s infinite;
+}
+
+.series-status.upcoming {
+    background: rgba(255, 107, 0, 0.2);
+    color: var(--primary-orange);
+}
+
+.series-teams {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.series-team {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--black-medium);
+    border-radius: var(--radius-sm);
+}
+
+.series-team.winner {
+    background: rgba(255, 107, 0, 0.15);
+    border-left: 3px solid var(--primary-orange);
+}
+
+.series-team .team-seed {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    background: var(--gray-dark);
+    margin: 0;
+}
+
+.series-team.winner .team-seed {
+    background: var(--primary-orange);
+}
+
+.series-team .team-name {
+    flex: 1;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.series-team .team-wins {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    min-width: 20px;
+    text-align: center;
+}
+
+.series-games {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.game-result {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--black-medium);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+}
+
+.game-result.upcoming {
+    background: rgba(255, 107, 0, 0.1);
+    border: 1px dashed var(--primary-orange);
+}
+
+.result-score {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--white);
+}
+
+.result-date {
+    color: var(--gray-light);
+    font-size: 10px;
+}
+
+/* Finals */
+.final-round {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.final-series {
+    margin-top: 20px;
+}
+
+.final-card {
+    background: linear-gradient(135deg, var(--black-light), rgba(255, 107, 0, 0.1));
+    border: 2px solid var(--primary-orange);
+    border-radius: var(--radius-xl);
+    padding: 30px;
+    box-shadow: var(--shadow-orange);
+}
+
+.final-teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.final-team {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    padding: 20px;
+    background: var(--black-medium);
+    border-radius: var(--radius-lg);
+}
+
+.final-team.tbd {
+    opacity: 0.6;
+    border-style: dashed;
+    border: 2px dashed var(--gray-dark);
+    background: transparent;
+}
+
+.final-seed {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.final-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.final-team-name {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.final-team-record {
+    font-size: 13px;
+    color: var(--gray-light);
+    margin-top: 3px;
+}
+
+.final-vs {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    padding: 0 25px;
+}
+
+.final-games {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.final-game {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--black-medium);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--gray-dark);
+}
+
+.final-game.upcoming {
+    border-left-color: var(--primary-orange);
+    background: rgba(255, 107, 0, 0.1);
+}
+
+.final-game.tbd {
+    opacity: 0.5;
+}
+
+.game-label {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    width: 70px;
+}
+
+.final-game .game-date {
+    flex: 1;
+    font-size: 13px;
+    color: var(--gray-light);
+    text-align: center;
+}
+
+.final-game .game-result {
+    background: transparent;
+    padding: 0;
+}
+
+.final-game .game-result {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.final-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray-medium);
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .playoff-series {
+        grid-template-columns: 1fr;
+    }
+    
+    .league-table th,
+    .league-table td {
+        padding: 10px 5px;
+        font-size: 11px;
+    }
+    
+    .col-home,
+    .col-away,
+    .col-pts-f,
+    .col-pts-a,
+    .col-diff {
+        display: none;
+    }
+    
+    .final-teams {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .final-vs {
+        padding: 15px 0;
+    }
+}

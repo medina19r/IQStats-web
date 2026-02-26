@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARBSV - Gerador de Equipas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1A1A1A, #0A0A0A);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #fff;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { text-align: center; color: #FF6B00; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #A0A0A0; margin-bottom: 40px; }
+        .card {
+            background: #2D2D2D;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #404040;
+        }
+        .card h2 { color: #FF6B00; margin-bottom: 15px; font-size: 1.1rem; }
+        .card p { color: #A0A0A0; margin-bottom: 15px; line-height: 1.6; font-size: 14px; }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #FF6B00, #E55C00);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(255, 107, 0, 0.4); }
+        .btn-secondary { background: #404040; }
+        .btn-secondary:hover { background: #505050; }
+        .status {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: none;
+        }
+        .status.show { display: block; }
+        .status.success { background: rgba(16, 185, 129, 0.2); color: #10B981; border: 1px solid #10B981; }
+        .status.error { background: rgba(239, 68, 68, 0.2); color: #EF4444; border: 1px solid #EF4444; }
+        .instructions {
+            background: #1A1A1A;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .instructions h3 { color: #FF6B00; margin-bottom: 10px; font-size: 1rem; }
+        .instructions ol { margin-left: 20px; color: #A0A0A0; line-height: 1.8; font-size: 14px; }
+        .instructions li { margin-bottom: 5px; }
+        code { background: #404040; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #FF8533; }
+        .note {
+            background: rgba(255, 107, 0, 0.1);
+            border: 1px dashed #FF6B00;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #A0A0A0;
+        }
+        .team-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .team-item {
+            background: #1A1A1A;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+        .team-item .name { color: #fff; font-weight: 600; }
+        .team-item .info { color: #666; font-size: 11px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏀 ARBSV</h1>
+        <p class="subtitle">Gerador de Dados das Equipas</p>
+        
+        <div class="card">
+            <h2>📥 Carregar Dados do Excel</h2>
+            <p>Clique no botão abaixo para carregar todos os dados das equipas dos ficheiros CSV e gerar os ficheiros JavaScript.</p>
+            <button class="btn" onclick="generateJS()">Gerar Ficheiros JS</button>
+            <div id="status" class="status"></div>
+        </div>
+        
+        <div class="card">
+            <h2>📁 Estrutura dos Ficheiros CSV</h2>
+            <p>Cada equipa tem o seu próprio ficheiro CSV que pode ser editado no Excel:</p>
+            <div class="team-list">
+                <div class="team-item">
+                    <div class="name">Campeonato/Senior</div>
+                    <div class="info">todos-blacks.csv<br>academica.csv<br>cruzeiros.csv<br>la-familia.csv<br>atlantic.csv</div>
+                </div>
+                <div class="team-item">
+                    <div class="name">TorneioAbertura/Senior</div>
+                    <div class="info">todos-blacks.csv<br>academica.csv<br>cruzeiros.csv<br>la-familia.csv</div>
+                </div>
+            </div>
+            <div class="instructions">
+                <h3>Como editar no Excel:</h3>
+                <ol>
+                    <li>Abra o ficheiro CSV da equipa (ex: <code>src/data/Campeonato/Senior/todos-blacks.csv</code>)</li>
+                    <li>Edite os dados no Excel (nome, número, posição, estatísticas)</li>
+                    <li>Guarde o ficheiro como CSV</li>
+                    <li>Clique em "Gerar Ficheiros JS" para atualizar</li>
+                </ol>
+            </div>
+            <div class="note">
+                💡 <strong>Dica:</strong> A primeira linha contém os cabeçalhos. A segunda linha é info da equipa. As linhas seguintes são os jogadores.
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🔄 Atualizar Página</h2>
+            <p>Após gerar os ficheiros JS, atualize a página do Campeonato para ver as alterações.</p>
+            <button class="btn btn-secondary" onclick="location.reload()">Atualizar Página</button>
+        </div>
+    </div>
+
+    <script>
+        class TeamDataLoader {
+            parseCSV(text) {
+                const lines = text.trim().split('\n');
+                const headers = lines[0].split(',').map(h => h.trim());
+                const data = [];
+                for (let i = 1; i < lines.length; i++) {
+                    if (!lines[i].trim()) continue;
+                    const values = this.parseCSVLine(lines[i]);
+                    const obj = {};
+                    headers.forEach((header, index) => {
+                        obj[header] = values[index]?.trim() || '';
+                    });
+                    data.push(obj);
+                }
+                return data;
+            }
+            
+            parseCSVLine(line) {
+                const result = [];
+                let current = '';
+                let inQuotes = false;
+                for (let i = 0; i < line.length; i++) {
+                    const char = line[i];
+                    if (char === '"') { inQuotes = !inQuotes; }
+                    else if (char === ',' && !inQuotes) {
+                        result.push(current.trim());
+                        current = '';
+                    } else { current += char; }
+                }
+                result.push(current.trim());
+                return result;
+            }
+            
+            async loadTeamCSV(path) {
+                try {
+                    const response = await fetch(path);
+                    if (!response.ok) return null;
+                    return await this.parseCSV(await response.text());
+                } catch (e) { return null; }
+            }
+        }
+
+        async function generateJS() {
+            const status = document.getElementById('status');
+            status.className = 'status show info';
+            status.textContent = 'A carregar dados...';
+            
+            const loader = new TeamDataLoader();
+            const teams = {};
+            
+            // Load Campeonato Senior
+            const campTeams = ['todos-blacks', 'academica', 'cruzeiros', 'la-familia', 'atlantic'];
+            for (const teamId of campTeams) {
+                const data = await loader.loadTeamCSV(`src/data/Campeonato/Senior/${teamId}.csv`);
+                if (data && data.length > 0) {
+                    const teamInfo = data[0];
+                    const players = data.slice(1).map(p => ({
+                        id: p.playerId,
+                        name: p.name,
+                        number: parseInt(p.jerseyNumber) || 0,
+                        position: p.position,
+                        height: parseInt(p.height) || 0,
+                        age: parseInt(p.cmAge) || 0,
+                        points: parseFloat(p.points) || 0,
+                        rebounds: parseFloat(p.rebounds) || 0,
+                        assists: parseFloat(p.assists) || 0,
+                        photo: p.photo || '🏀'
+                    })).filter(p => p.name);
+                    
+                    teams[`${teamId}-camp-senior`] = { info: teamInfo, players };
+                }
+            }
+            
+            // Load TorneioAbertura Senior
+            const abertTeams = ['todos-blacks', 'academica', 'cruzeiros', 'la-familia'];
+            for (const teamId of abertTeams) {
+                const data = await loader.loadTeamCSV(`src/data/TorneioAbertura/Senior/${teamId}.csv`);
+                if (data && data.length > 0) {
+                    const teamInfo = data[0];
+                    const players = data.slice(1).map(p => ({
+                        id: p.playerId,
+                        name: p.name,
+                        number: parseInt(p.jerseyNumber) || 0,
+                        position: p.position,
+                        height: parseInt(p.height) || 0,
+                        age: parseInt(p.cmAge) || 0,
+                        points: parseFloat(p.points) || 0,
+                        rebounds: parseFloat(p.rebounds) || 0,
+                        assists: parseFloat(p.assists) || 0,
+                        photo: p.photo || '🏀'
+                    })).filter(p => p.name);
+                    
+                    teams[`${teamId}-abert-senior`] = { info: teamInfo, players };
+                }
+            }
+            
+            // Generate JavaScript
+            let jsCode = '/**\n * ARBSV - Teams Data (Auto-generated)\n */\n\n';
+            jsCode += 'window.teamsData = ' + JSON.stringify(teams, null, 2) + ';\n\n';
+            jsCode += 'if (typeof module !== "undefined") module.exports = window.teamsData;\n';
+            
+            // Download
+            const blob = new Blob([jsCode], { type: 'text/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'teams-generated.js';
+            a.click();
+            
+            const teamCount = Object.keys(teams).length;
+            status.className = 'status show success';
+            status.innerHTML = `✅ Sucesso! ${teamCount} equipas carregadas.<br>Ficheiro teams-generated.js foi baixado.`;
+        }
+    </script>
+</body>
+</html>

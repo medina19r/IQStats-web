@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition,coach,assistantCoach
+aca-senior-abert,Académica,ACA,#1E3A5F,São Vicente,2003,Pavilhão da Achada,Senior,TorneioAbertura,Rui Delgado,Marta Ferreira
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo,isTopPlayer
+1,10,Jorge Miguel,Ala,191,26,20.5,6.2,4.1,🏀,true
+2,8,Daniel Oliveira,Base,182,24,17.8,3.5,6.8,🏀,true
+3,12,Sérgio Nunes,Pivô,202,28,14.9,8.7,1.4,🏀,false
+4,7,Hugo Santos,Ala,188,22,13.7,4.6,3.5,🏀,false
+5,5,Ricardo Lopes,Armador,178,20,11.9,2.4,6.2,🏀,false
+6,9,Paulo Rodrigues,Ala,190,25,12.8,4.3,2.9,🏀,false
+7,11,Fábio Monteiro,Pivô,197,27,10.6,7.5,1.2,🏀,false
+8,6,Cláudio Pinto,Base,177,21,9.8,2.1,5.1,🏀,false

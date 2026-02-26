@@ -1,0 +1,12 @@
+id,name,shortName,color,city,founded,arena,category,competition,coach,assistantCoach
+alb-sub18-abert,All Blacks,ALB,#000000,São Vicente,2010,Pavilhão Polideportivo,Sub18,TorneioAbertura,Mário Lima,Pedro Santos
+
+playerId,jerseyNumber,name,position,height,cmAge,points,rebounds,assists,photo,isTopPlayer
+1,10,João Silva,Ala,185,17,20.5,5.8,3.2,🏀,true
+2,8,Tiago Santos,Base,175,16,17.2,3.5,5.8,🏀,true
+3,12,Pedro Oliveira,Pivô,195,18,14.8,8.5,1.5,🏀,false
+4,7,André Costa,Ala,180,17,13.9,4.2,2.9,🏀,false
+5,5,Martim Rodrigues,Armador,172,16,11.2,2.1,5.5,🏀,false
+6,9,Francisco Lima,Ala,178,17,12.5,3.8,2.8,🏀,false
+7,11,José Ferreira,Pivô,190,18,10.1,6.9,1.1,🏀,false
+8,6,Gabriel Silva,Base,170,16,9.5,1.8,4.2,🏀,false
