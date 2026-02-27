@@ -30,19 +30,19 @@ window.torneioAbertura2026 = {
                 G2: ["ATL", "RSO", "ACA"]
             },
             matches: [
-                // Grupo 2
-                { round: "G2", date: "11/02/2026", time: "19:00", group: "G2", teamA: "ATL", teamB: "RSO", category: "Senior" },
-                { round: "G2", date: "14/02/2026", time: "20:00", group: "G2", teamA: "RSO", teamB: "ACA", category: "Senior" },
-                { round: "G2", date: "21/02/2026", time: "20:00", group: "G2", teamA: "ACA", teamB: "ATL", category: "Senior" },
-                // Grupo 1
-                { round: "G1", date: "11/02/2026", time: "20:30", group: "G1", teamA: "CRZ", teamB: "LFA", category: "Senior" },
-                { round: "G1", date: "25/02/2026", time: "20:30", group: "G1", teamA: "ALB", teamB: "CRZ", category: "Senior" },
-                { round: "G1", date: "28/02/2026", time: "20:00", group: "G1", teamA: "ALB", teamB: "LFA", category: "Senior" },
-                // Meias Finais
-                { round: "MF-1", date: "04/03/2026", time: "20:00", group: "MF1", teamA: "1.º G1", teamB: "2.º G2", category: "Senior" },
-                { round: "MF-2", date: "07/03/2026", time: "20:30", group: "MF2", teamA: "1.º G2", teamB: "2.º G1", category: "Senior" },
-                // Final Senior
-                { round: "FINAL", date: "14/03/2026", time: "20:30", group: "FINAL", teamA: "Vencedor MF-1", teamB: "Vencedor MF-2", category: "Senior" }
+                // G2 - Grupo 2
+                { round: "G2", date: "11/02/2026", time: "19:00", group: "G2", teamA: "ATL", teamB: "RSO", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" },
+                { round: "G2", date: "14/02/2026", time: "20:00", group: "G2", teamA: "RSO", teamB: "ACA", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" },
+                { round: "G2", date: "21/02/2026", time: "20:00", group: "G2", teamA: "ACA", teamB: "ATL", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" },
+                // G1 - Grupo 1
+                { round: "G1", date: "11/02/2026", time: "20:30", group: "G1", teamA: "CRZ", teamB: "LFA", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" },
+                { round: "G1", date: "25/02/2026", time: "20:30", group: "G1", teamA: "ALB", teamB: "CRZ", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" },
+                { round: "G1", date: "28/02/2026", time: "20:00", group: "G1", teamA: "ALB", teamB: "LFA", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" },
+                // MF - Meias Finais
+                { round: "MF-1", date: "04/03/2026", time: "20:00", group: "MF", teamA: "1.º G1", teamB: "2.º G2", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" },
+                { round: "MF-2", date: "07/03/2026", time: "20:30", group: "MF", teamA: "1.º G2", teamB: "2.º G1", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" },
+                // FINAL Senior
+                { round: "FINAL Senior", date: "14/03/2026", time: "20:30", group: "FINAL", teamA: "Vencedor MF-1", teamB: "Vencedor MF-2", category: "Senior", scoreA: 0, scoreB: 0, status: "upcoming" }
             ]
         }
     }

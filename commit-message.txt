@@ -1,8 +1,2 @@
-Fix Torneio de Abertura page to show different data for Senior vs Sub-18 categories
+feat: 
 
-- Sub-18 now shows 3 teams (ALB, CRZ, LFA) with double round robin + final format
-- Senior shows 6 teams in 2 groups (Grupo A, Grupo B)
-- Games are now displayed in a single column layout (one on top of another)
-- Round sections separated: 1ª Volta, 2ª Volta, FINAL for Sub-18; G1, G2, MF, FINAL for Senior
-- No groups section shown for Sub-18 category
-- Added category filter to loadSchedule() function

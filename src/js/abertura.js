@@ -172,16 +172,13 @@ class TorneioAbertura {
     }
 
     loadStandings() {
-        const container = document.getElementById('standings-body');
+        const container = document.getElementById('standings-grid');
+        const standingsSection = document.getElementById('standings-section');
         
-        // Get games for current category - use lowercase for sub18, proper case for Senior
+        // Always show standings section
+        standingsSection.style.display = 'block';
+        
         const allGames = window.torneioAbertura2026?.categories[this.currentCategory]?.matches || [];
-        const categoryFilter = this.currentCategory === 'sub18' ? 'Sub18' : 'Senior';
-        const games = allGames.filter(m => m.category === categoryFilter);
-        
-        // Calculate standings using FIBA regulation
-        // 2 points for win, 1 point for loss
-        const standings = this.calculateStandings(games);
         
         const teamColors = {
             'ALB': '#000000',
@@ -201,39 +198,192 @@ class TorneioAbertura {
             'ACA': 'Académica'
         };
         
-        let html = standings.map((row, index) => {
-            const isFirst = index === 0;
-            return `
-                <tr class="${isFirst ? 'first-place' : ''}">
-                    <td class="position">${row.position}</td>
-                    <td class="col-team">
-                        <div class="team-cell">
-                            <div class="team-mini-logo" style="background: ${teamColors[row.team]}">${row.team}</div>
-                            <span>${teamNames[row.team]}</span>
-                        </div>
-                    </td>
-                    <td>${row.games}</td>
-                    <td>${row.wins}</td>
-                    <td>${row.losses}</td>
-                    <td><strong>${row.points}</strong></td>
-                </tr>
-            `;
-        }).join('');
+        let html = '';
         
-        container.innerHTML = html || '<tr><td colspan="6">Sem dados de classificação</td></tr>';
+        if (this.currentCategory === 'senior') {
+            // For Senior, show two tables - one for each group
+            const groups = {
+                'Grupo 1': ['ALB', 'CRZ', 'LFA'],
+                'Grupo 2': ['ATL', 'RSO', 'ACA']
+            };
+            
+            // Create a table for each group
+            for (const [groupName, groupTeams] of Object.entries(groups)) {
+                // Filter games for this group
+                const groupGames = allGames.filter(m => 
+                    m.group === (groupName === 'Grupo 1' ? 'G1' : 'G2')
+                );
+                
+                // Calculate standings for this group
+                const standings = this.calculateStandings(groupGames, groupTeams);
+                
+                html += `
+                    <div class="standings-table-wrapper">
+                        <h3 class="group-standings-title">${groupName}</h3>
+                        <table class="standings-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-pos">Pos</th>
+                                    <th class="col-team">Equipa</th>
+                                    <th class="col-games">J</th>
+                                    <th class="col-wins">V</th>
+                                    <th class="col-losses">D</th>
+                                    <th class="col-points-made">PM</th>
+                                    <th class="col-points-suffered">PS</th>
+                                    <th class="col-points">P</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+                
+                if (standings.length > 0) {
+                    html += standings.map((row, index) => {
+                        const isFirst = index === 0;
+                        return `
+                            <tr class="${isFirst ? 'first-place' : ''}">
+                                <td class="position">${row.position}</td>
+                                <td class="col-team">
+                                    <div class="team-cell">
+                                        <div class="team-mini-logo" style="background: ${teamColors[row.team]}">${row.team}</div>
+                                        <span>${teamNames[row.team]}</span>
+                                    </div>
+                                </td>
+                                <td>${row.games}</td>
+                                <td>${row.wins}</td>
+                                <td>${row.losses}</td>
+                                <td>${row.pointsFor}</td>
+                                <td>${row.pointsAgainst}</td>
+                                <td><strong>${row.points}</strong></td>
+                            </tr>
+                        `;
+                    }).join('');
+                } else {
+                    // Show group teams with 0 games
+                    html += groupTeams.map((team, index) => {
+                        const isFirst = index === 0;
+                        return `
+                            <tr class="${isFirst ? 'first-place' : ''}">
+                                <td class="position">${index + 1}</td>
+                                <td class="col-team">
+                                    <div class="team-cell">
+                                        <div class="team-mini-logo" style="background: ${teamColors[team]}">${team}</div>
+                                        <span>${teamNames[team]}</span>
+                                    </div>
+                                </td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><strong>0</strong></td>
+                            </tr>
+                        `;
+                    }).join('');
+                }
+                
+                html += `
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+        } else {
+            // For Sub-18, show a single table with all 3 teams
+            const sub18Teams = ['ALB', 'CRZ', 'LFA'];
+            
+            // Calculate standings for Sub-18
+            const standings = this.calculateStandings(allGames, sub18Teams);
+            
+            html += `
+                <div class="standings-table-wrapper">
+                    <h3 class="group-standings-title">Classificação - Sub-18</h3>
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th class="col-pos">Pos</th>
+                                <th class="col-team">Equipa</th>
+                                <th class="col-games">J</th>
+                                <th class="col-wins">V</th>
+                                <th class="col-losses">D</th>
+                                <th class="col-points-made">PM</th>
+                                <th class="col-points-suffered">PS</th>
+                                <th class="col-points">P</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+            
+            if (standings.length > 0) {
+                html += standings.map((row, index) => {
+                    const isFirst = index === 0;
+                    return `
+                        <tr class="${isFirst ? 'first-place' : ''}">
+                            <td class="position">${row.position}</td>
+                            <td class="col-team">
+                                <div class="team-cell">
+                                    <div class="team-mini-logo" style="background: ${teamColors[row.team]}">${row.team}</div>
+                                    <span>${teamNames[row.team]}</span>
+                                </div>
+                            </td>
+                            <td>${row.games}</td>
+                            <td>${row.wins}</td>
+                            <td>${row.losses}</td>
+                            <td>${row.pointsFor}</td>
+                            <td>${row.pointsAgainst}</td>
+                            <td><strong>${row.points}</strong></td>
+                        </tr>
+                    `;
+                }).join('');
+            } else {
+                // Show teams with 0 games
+                html += sub18Teams.map((team, index) => {
+                    const isFirst = index === 0;
+                    return `
+                        <tr class="${isFirst ? 'first-place' : ''}">
+                            <td class="position">${index + 1}</td>
+                            <td class="col-team">
+                                <div class="team-cell">
+                                    <div class="team-mini-logo" style="background: ${teamColors[team]}">${team}</div>
+                                    <span>${teamNames[team]}</span>
+                                </div>
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><strong>0</strong></td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+            
+            html += `
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+        
+        container.innerHTML = html;
     }
-
-    calculateStandings(games) {
-        // Get all teams from games
+    
+    calculateStandings(games, teamList = null) {
+        // Get all teams from games or from teamList
         const teamSet = new Set();
-        games.forEach(game => {
-            if (typeof game.teamA === 'string' && !game.teamA.includes('.')) {
-                teamSet.add(game.teamA);
-            }
-            if (typeof game.teamB === 'string' && !game.teamB.includes('.')) {
-                teamSet.add(game.teamB);
-            }
-        });
+        
+        if (teamList && teamList.length > 0) {
+            teamList.forEach(team => teamSet.add(team));
+        } else {
+            games.forEach(game => {
+                if (typeof game.teamA === 'string' && !game.teamA.includes('.')) {
+                    teamSet.add(game.teamA);
+                }
+                if (typeof game.teamB === 'string' && !game.teamB.includes('.')) {
+                    teamSet.add(game.teamB);
+                }
+            });
+        }
         
         // Initialize standings
         const standingsMap = {};

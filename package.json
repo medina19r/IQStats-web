@@ -1,0 +1,22 @@
+{
+  "name": "arbsv",
+  "version": "1.0.0",
+  "description": "Associação Regional de Basquetebol de São Vicente - Official Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -l 3000",
+    "preview": "npx serve . -l 8080"
+  },
+  "keywords": [
+    "basketball",
+    "sports",
+    "arbsv",
+    "sao-vicente"
+  ],
+  "author": "ARBSV",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

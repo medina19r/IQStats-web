@@ -93,7 +93,7 @@ class TeamDataLoader {
      * Load all teams for Torneio Abertura Sub18
      */
     async loadTorneioAberturaSub18() {
-        const teamIds = ['todos-blacks', 'academica', 'cruzeiros', 'la-familia', 'atlético', 'real-sociedade'];
+        const teamIds = ['todos-blacks', 'cruzeiros', 'la-familia'];
         return await this.loadTeams('TorneioAbertura', 'Sub18', teamIds);
     }
 

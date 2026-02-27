@@ -375,7 +375,8 @@ body {
     background: linear-gradient(180deg, var(--black-medium) 0%, var(--black-dark) 100%);
 }
 
-.groups-container {
+.groups-container,
+#groups-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -656,6 +657,12 @@ body {
 .standings-section {
     padding: 80px 0;
     background: var(--black-dark);
+}
+
+.standings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
 }
 
 .section-subtitle {
@@ -1227,5 +1234,13 @@ body {
     
     .final-vs {
         padding: 15px 0;
+    }
+    
+    .standings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .groups-container {
+        grid-template-columns: 1fr;
     }
 }
