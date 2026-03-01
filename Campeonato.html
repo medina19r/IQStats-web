@@ -288,8 +288,8 @@
     <script src="src/data/games.js"></script>
     <script src="src/js/copa.js"></script>
     <script>
-        // Regular Season Standings Data (6 teams, 2 rounds = 10 games each)
-        const regularStandings = [
+        // Senior Standings (6 teams)
+        const seniorStandings = [
             { pos: 1, team: 'Allblacks', seed: 1, wins: 0, losses: 0, homeWins: 0, awayWins: 0, pf: 0, pa: 0, pts: 0 },
             { pos: 2, team: 'Cruzeiros', seed: 2, wins: 0, losses: 0, homeWins: 0, awayWins: 0, pf: 0, pa: 0, pts: 0 },
             { pos: 3, team: 'La Familia', seed: 3, wins: 0, losses: 0, homeWins: 0, awayWins: 0, pf: 0, pa: 0, pts: 0 },
@@ -298,17 +298,31 @@
             { pos: 6, team: 'Académica', seed: 6, wins: 0, losses: 0, homeWins: 0, awayWins: 0, pf: 0, pa: 0, pts: 0 }
         ];
 
+        // Sub18 Standings (only 3 teams)
+        const sub18Standings = [
+            { pos: 1, team: 'Allblacks', seed: 1, wins: 0, losses: 0, homeWins: 0, awayWins: 0, pf: 0, pa: 0, pts: 0 },
+            { pos: 2, team: 'Cruzeiros', seed: 2, wins: 0, losses: 0, homeWins: 0, awayWins: 0, pf: 0, pa: 0, pts: 0 },
+            { pos: 3, team: 'La Familia', seed: 3, wins: 0, losses: 0, homeWins: 0, awayWins: 0, pf: 0, pa: 0, pts: 0 }
+        ];
+
         // Render regular season standings
         function renderRegularStandings() {
+            // Use window.currentCategory (set by copa.js)
+            const currentCategory = typeof window.currentCategory !== 'undefined' ? window.currentCategory : 'senior';
+            const standings = currentCategory === 'sub18' ? sub18Standings : seniorStandings;
             const tbody = document.getElementById('regular-standings');
-            tbody.innerHTML = regularStandings.map(team => {
+            
+            // For Sub18 with 3 teams, only top 2 make playoffs
+            const topN = currentCategory === 'sub18' ? 2 : 4;
+            
+            tbody.innerHTML = standings.map(team => {
                 const diff = team.pf - team.pa;
-                const isTop4 = team.pos <= 4;
+                const isTopN = team.pos <= topN;
                 return `
-                    <tr class="${isTop4 ? 'playoff-spot' : ''} ${team.pos === 1 ? 'first-place' : ''}">
+                    <tr class="${isTopN ? 'playoff-spot' : ''} ${team.pos === 1 ? 'first-place' : ''}">
                         <td class="col-pos">
                             <span class="position">${team.pos}</span>
-                            ${isTop4 ? '<span class="playoff-badge">🔒</span>' : ''}
+                            ${isTopN ? '<span class="playoff-badge">🔒</span>' : ''}
                         </td>
                         <td class="col-team">
                             <span class="team-seed">${team.seed}</span>
@@ -326,10 +340,31 @@
                     </tr>
                 `;
             }).join('');
+            
+            // Update meta info
+            const metaValue = document.querySelector('.meta-value');
+            if (metaValue) {
+                metaValue.textContent = currentCategory === 'sub18' ? '3 Equipas' : '6 Equipas';
+            }
+            
+            // Update playoffs info text
+            const playoffsInfo = document.querySelector('.playoffs-info .info-text');
+            if (playoffsInfo) {
+                playoffsInfo.textContent = currentCategory === 'sub18' 
+                    ? 'Top 2 classificadas para os Playoffs' 
+                    : 'Top 4 classificadas para os Playoffs';
+            }
         }
+
+        // Listen for category changes from copa.js
+        document.addEventListener('categoryChanged', function(e) {
+            renderRegularStandings();
+        });
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
+            // Set initial category
+            window.currentCategory = 'senior';
             renderRegularStandings();
         });
     </script>

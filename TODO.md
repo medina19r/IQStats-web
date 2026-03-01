@@ -1,30 +1,29 @@
-# ARBSV Website Redesign Plan
+# TODO - Update Sub18 Teams in Campeonato
 
-## Task: Create separate tournament pages and modernize main index
+## Task: Show only 3 teams (Allblacks, Cruzeiros, La Familia) in Sub18 category
 
-## Phase 1: Modernize Main Index (index.html)
+### Files Edited:
 
-- [ ] Redesign hero section with modern basketball imagery
-- [ ] Add quick navigation to tournaments
-- [ ] Add featured games section
-- [ ] Modernize overall layout
+- [x] 1. src/js/copa.js - Added filtering logic for Sub18
+- [x] 2. Campeonato.html - Updated standings and meta for Sub18
 
-## Phase 2: Create Campeonato Page (copa.html)
+### Teams to keep for Sub18:
 
-- [ ] Create championship.html with full tournament info
-- [ ] Games section (previous and upcoming)
-- [ ] Group phase standings
-- [ ] Knockout bracket diagram
+- Allblacks (Todos Blacks)
+- Cruzeiros
+- La Familia
 
-## Phase 3: Create Torneio de Abertura Page (torneio.html)
+### Changes Made:
 
-- [ ] Create abertura.html with full tournament info
-- [ ] Games section (previous and upcoming)
-- [ ] Group phase standings
-- [ ] Knockout bracket diagram
+1. In src/js/copa.js:
+   - Added sub18Teams array with the 3 allowed teams
+   - Added currentCategory variable to track selected category
+   - Modified renderGames() to filter games for Sub18 (only show matches between the 3 teams)
+   - Updated category button click handler to update currentCategory and re-render games
 
-## Phase 4: Create CSS Styles for Tournament Pages
-
-- [ ] Tournament-specific styling
-- [ ] Bracket/knockout diagram styling
-- [ ] Group standings table
+2. In Campeonato.html:
+   - Created seniorStandings (6 teams) and sub18Standings (3 teams) arrays
+   - Modified renderRegularStandings() to show different teams based on category
+   - Updated meta info to show "3 Equipas" for Sub18
+   - Updated playoffs info to show "Top 2 classificadas" for Sub18
+   - Added category button click handler that syncs with the games section

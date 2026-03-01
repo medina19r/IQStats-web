@@ -103,6 +103,9 @@ const championshipTeams = {
     'santo-antao': { name: 'Santo Antão', shortName: 'SA', color: '#F59E0B' }
 };
 
+// Sub18 teams - only these 3 teams
+const sub18Teams = ['todos-blacks', 'cruzeiros', 'la-familia'];
+
 // ========================================
 // DOM Elements
 // ========================================
@@ -129,16 +132,26 @@ function formatStatus(status) {
 }
 
 function renderGames(filter = 'previous') {
-    const filteredGames = filter === 'previous' 
+    // Get current category from window object (set by inline script)
+    const currentCat = typeof window.currentCategory !== 'undefined' ? window.currentCategory : 'senior';
+    
+    let games = filter === 'previous' 
         ? championshipGames.filter(g => g.status === 'finished')
         : championshipGames.filter(g => g.status === 'upcoming');
     
-    if (filteredGames.length === 0) {
+    // Filter for Sub18 - only show games between the 3 teams
+    if (currentCat === 'sub18') {
+        games = games.filter(g => 
+            sub18Teams.includes(g.teamA) && sub18Teams.includes(g.teamB)
+        );
+    }
+    
+    if (games.length === 0) {
         gamesGrid.innerHTML = '<p style="text-align: center; color: var(--gray-light); grid-column: 1/-1;">Nenhum jogo encontrado</p>';
         return;
     }
     
-    gamesGrid.innerHTML = filteredGames.map(game => {
+    gamesGrid.innerHTML = games.map(game => {
         const teamA = getTeam(game.teamA);
         const teamB = getTeam(game.teamB);
         
@@ -187,6 +200,17 @@ categoryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         categoryBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        
+        // Update current category in window object
+        window.currentCategory = btn.dataset.category;
+        
+        // Trigger custom event for inline script to handle standings
+        const event = new CustomEvent('categoryChanged', { detail: { category: btn.dataset.category } });
+        document.dispatchEvent(event);
+        
+        // Re-render games with new category filter
+        const activeTab = document.querySelector('.games-tab.active');
+        renderGames(activeTab ? activeTab.dataset.tab : 'previous');
     });
 });
 
