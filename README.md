@@ -10,7 +10,7 @@ Este projeto é um site de gestão e divulgação de competições de basquetebo
 
 ```
 arbsv/
-├── arbsvHomePage.html  # Página principal (Home)
+├── index.html  # Página principal (Home)
 ├── basketballpages/
 │   ├── abertura.html       # Página do Torneio de Abertura
 │   └── Campeonato.html    # Página do Campeonato Regional
@@ -49,7 +49,7 @@ arbsv/
 
 ## ✨ Funcionalidades
 
-### Página Principal (arbsvHomePage.html)
+### Página Principal (index.html)
 
 - Secção Hero com imagem de fundo e estatísticas
 - Secção do Campeonato Atual com equipas participantes
@@ -75,12 +75,12 @@ arbsv/
 ## 🚀 Como Executar
 
 1. Clone o repositório
-2. Abra o arquivo `arbsvHomePage.html` no navegador web
+2. Abra o arquivo `index.html` no navegador web
 
 ```
 bash
 # Ou simplesmente abra no navegador
-arbsvHomePage.html
+index.html
 ```
 
 ## 📋 Categorias
