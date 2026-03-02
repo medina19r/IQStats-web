@@ -2,7 +2,7 @@
   "name": "arbsv",
   "version": "1.0.0",
   "description": "Associação Regional de Basquetebol de São Vicente - Official Website",
-  "main": "index.html",
+  "main": "arbsvHomePage.html",
   "scripts": {
     "start": "npx serve .",
     "dev": "npx serve . -l 3000",
