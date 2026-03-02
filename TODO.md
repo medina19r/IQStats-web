@@ -1,29 +1,26 @@
-# TODO - Update Sub18 Teams in Campeonato
+# TODO - Fix Remaining Issues
 
-## Task: Show only 3 teams (Allblacks, Cruzeiros, La Familia) in Sub18 category
+## 3.2 REMAINING ISSUES - FIXING
 
-### Files Edited:
+### A) YEAR INCONSISTENCY → Using 2026 ✅ FIXED
 
-- [x] 1. src/js/copa.js - Added filtering logic for Sub18
-- [x] 2. Campeonato.html - Updated standings and meta for Sub18
+- [x] Update index.html to use "2026" instead of "2024"
+- [x] Update Campeonato.html to use "2026" instead of "2024"
+- [x] Verify abertura.html uses "2026" (already correct)
 
-### Teams to keep for Sub18:
+### B) INCONSISTENT TEAM DATA → Using "All Blacks" ✅ FIXED
 
-- Allblacks (Todos Blacks)
-- Cruzeiros
-- La Familia
+- [x] Update index.html team names to "All Blacks"
+- [x] Update index.html news title to "All Blacks"
+- [x] Update Campeonato.html inline script to use "All Blacks"
+- [x] Update Campeonato.html HTML to use "All Blacks"
 
-### Changes Made:
+### C) INLINE SCRIPTS
 
-1. In src/js/copa.js:
-   - Added sub18Teams array with the 3 allowed teams
-   - Added currentCategory variable to track selected category
-   - Modified renderGames() to filter games for Sub18 (only show matches between the 3 teams)
-   - Updated category button click handler to update currentCategory and re-render games
+- [ ] Move inline script from Campeonato.html to external file (optional - deferred)
 
-2. In Campeonato.html:
-   - Created seniorStandings (6 teams) and sub18Standings (3 teams) arrays
-   - Modified renderRegularStandings() to show different teams based on category
-   - Updated meta info to show "3 Equipas" for Sub18
-   - Updated playoffs info to show "Top 2 classificadas" for Sub18
-   - Added category button click handler that syncs with the games section
+## Completed ✅
+
+- A) MISSING FONTS LOAD (abertura.html) - Already Fixed
+- B) NAVIGATION LINK ERROR (abertura.html) - Already Fixed
+- C) SEO OPTIMIZATION - Already Fixed

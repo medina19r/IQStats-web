@@ -1,0 +1,311 @@
+================================================================================
+                    ARBSV - ASSOCIAÇÃO REGIONAL DE BASQUETEBOL
+                           DE SÃO VICENTE
+                    PROJETO WEB - APRESENTAÇÃO OFICIAL
+================================================================================
+
+🏀 PROJETO: Website Oficial da ARBSV
+📍 LOCAL: São Vicente, Cabo Verde
+📅 ANO: 2026
+🌐 URL: (Em desenvolvimento)
+
+================================================================================
+                              INTRODUÇÃO
+================================================================================
+
+O presente documento apresenta o projeto de desenvolvimento do website 
+oficial da Associação Regional de Basquetebol de São Vicente (ARBSV), 
+uma plataforma web moderna e responsiva dedicada à promoção e divulgação 
+do basquetebol regional na ilha de São Vicente, Cabo Verde.
+
+================================================================================
+                           🎯 OBJETIVOS
+================================================================================
+
+OBJETIVO PRINCIPAL:
+-------------------
+Criar uma plataforma digital moderna que permita a gestão e divulgação 
+das competições de basquetebol na região de São Vicente, fornecendo 
+informação atualizada sobre resultados, classificações, estatísticas 
+de jogadores e informações sobre os torneios.
+
+OBJECTIVOS ESPECÍFICOS:
+---------------------
+✓ Disponibilizar informação em tempo real sobre jogos e resultados
+✓ Apresentar classificações atualizadas das competições
+✓ Divulgar estatísticas detalhadas dos jogadores
+✓ Promover as equipas participantes
+✓ Aumentar a visibilidade do basquetebol regional
+✓ Facilitar o acesso à informação por parte de adeptos e gestores
+
+================================================================================
+                        📊 ANÁLISE DO PROJETO
+================================================================================
+
+ESCOPO DO PROJETO:
+-----------------
+• Website multiplataforma (Desktop, Tablet, Mobile)
+• 3 páginas principais
+• Sistema de gestão de dados de equipas e jogadores
+• Visualização de jogos e resultados
+• Classificações e estatísticas
+• Design moderno e responsivo
+
+TECNOLOGIAS UTILIZADAS:
+----------------------
+• HTML5 - Estrutura das páginas
+• CSS3 - Estilização e design responsivo
+• JavaScript (Vanilla) - Funcionalidades dinâmicas
+• Google Fonts - Tipografia (Oswald, Montserrat)
+
+================================================================================
+                      🏟️ ESTRUTURA DO WEBSITE
+================================================================================
+
+PÁGINA PRINCIPAL (index.html)
+----------------------------
+A página inicial serve como portal de entrada e inclui:
+
+• Secção Hero
+  - Imagem de fundo temática
+  - Estatísticas gerais (2 Campeonatos, 8 Equipas, 44 Jogos, 150 Atletas)
+  - Call-to-action para Campeonatos
+
+• Secção de Campeonatos
+  - Cartão do Campeonato Regional
+  - Cartão do Torneio de Abertura
+  - Links diretos para as páginas detalhadas
+
+• Secção de Jogos em Destaque
+  - Próximos jogos agendados
+  - Informação de data, hora e local
+  - Equipas participantes
+
+• Secção de Notícias
+  - Últimas notícias do basquetebol regional
+  - Resultados e antevisões
+
+• Secção Sobre
+  - História da ARBSV
+  - Missão e objetivos
+  - Contactos
+
+PÁGINA DO CAMPEONATO (basketballpages/Campeonato.html)
+-------------------------------------------------------
+• Selector de categoria (Senior / Sub-18)
+• Temporada Regular
+• Sistema de playoffs/eliminatórias
+• Classificação detalhada
+• Dados das equipas participantes
+
+PÁGINA DO TORNEIO DE ABERTURA (basketballpages/abertura.html)
+-------------------------------------------------------------
+• Selector de categoria (Senior / Sub-18)
+• Jogos separados por rondas
+• Classificação por grupos
+• Sistema de eliminatórias
+
+================================================================================
+                        👥 EQUIPAS PARTICIPANTES
+================================================================================
+
+CATEGORIA SENIOR (8 Equipas - 2 Grupos):
+---------------------------------------
+GRUPO A:
+• Académica do Mindelo
+• Atlantic
+• La Familia
+• Todos Blacks
+
+GRUPO B:
+• Atlético
+• Cruzeiros
+• Mindelo Lions
+• Real Sociedade
+
+CATEGORIA SUB-18 (3 Equipas - Round Robin):
+------------------------------------------
+• Académica do Mindelo
+• Cruzeiros
+• La Familia
+• Todos Blacks
+
+================================================================================
+                     🎨 DESIGN E IDENTIDADE VISUAL
+================================================================================
+
+CORES PRINCIPAIS:
+---------------
+• Laranja: #FF6B00 (Cor principal - energia, dinamismo)
+• Preto: #1A1A1A (Cor secundária - elegância, profissionalismo)
+• Branco: #FFFFFF (Contraste e texto)
+• Cinzento: #F5F5F5 (Fundos)
+
+TIPOGRAFIA:
+----------
+• Títulos: Oswald (bold, impactante)
+• Corpo de texto: Montserrat (leitura confortável)
+
+LAYOUT:
+------
+• Design Responsivo (Mobile First)
+• Flexbox e CSS Grid
+• Animações e transições suaves
+• Interface intuitiva e user-friendly
+
+ESTILO:
+-------
+• Moderno e dinâmico
+• Foco na experiência do utilizador
+• Elementos visuais desportivos
+• Navegação simplificada
+
+================================================================================
+                     ✨ FUNCIONALIDADES IMPLEMENTADAS
+================================================================================
+
+SISTEMA DE NAVEGAÇÃO:
+-------------------
+✓ Menu responsivo com toggle mobile
+✓ Links internos suaves (smooth scroll)
+✓ Indicação de secção atual
+✓ Logo clicável para home
+
+APRESENTAÇÃO DE DADOS:
+---------------------
+✓ Cards informativos com detalhes dos Campeonatos
+✓ Listagem de jogos com data, hora e local
+✓ Tabelas de classificação
+✓ Estatísticas de equipas e jogadores
+
+INTERATIVIDADE:
+--------------
+✓ Animações em scroll
+✓ Contadores animados
+✓ Efeitos hover em elementos interativos
+✓ Modal para detalhes de jogos
+✓ Filtros de pesquisa
+
+OTIMIZAÇÕES:
+-----------
+✓ Meta tags SEO
+✓ Open Graph para redes sociais
+✓ Pré-carregamento de fontes
+✓ Código otimizado e leve
+
+================================================================================
+                      📈 COMPETIÇÕES E CALENDÁRIO
+================================================================================
+
+TEMPORADA 2026:
+--------------
+
+TORNEIO DE ABERTURA:
+• Período: Fevereiro - Março
+• Equipas: 8 (Senior) + 4 (Sub-18)
+• Jogos: 16
+• Formato: Fase de grupos + Eliminatórias
+
+CAMPEONATO REGIONAL:
+• Período: Janeiro - Abril
+• Equipas: 8 (Senior) + 4 (Sub-18)
+• Jogos: 28
+• Formato: Temporada Regular + Playoffs
+
+================================================================================
+                      💡 BENEFÍCIOS DO PROJETO
+================================================================================
+
+PARA A ASSOCIAÇÃO:
+----------------
+• Maior visibilidade e profissionalismo
+• Gestão mais eficiente da informação
+• Canal direto de comunicação com adeptos
+• Promoção de eventos e patrocínios
+• Presença digital moderna
+
+PARA OS ADEPTOS:
+--------------
+• Acesso fácil e rápido à informação
+• Resultados em tempo real
+• Estatísticas detalhadas
+• Histórico de competições
+• Notícias atualizadas
+
+PARA AS EQUIPAS:
+--------------
+• Divulgação das equipas
+• Estatísticas de jogadores
+• Histórico de confrontos
+• Promoção de jovens talentos
+
+PARA OS PATROCINADORES:
+---------------------
+• Exposição da marca
+• Portal de visibilidade
+• Oportunidades de marketing
+
+================================================================================
+                        🚀 PRÓXIMOS PASSOS
+================================================================================
+
+FASE 1 - CONCLUÍDA ✓:
+--------------------
+• Estrutura base do website
+• Design e identidade visual
+• Páginas principais
+• Dados das equipas
+
+FASE 2 - EM DESENVOLVIMENTO:
+---------------------------
+• Otimização de desempenho
+• Testes em diferentes dispositivos
+• Validação de acessibilidade
+
+FASE 3 - PLANEADOS:
+------------------
+• Sistema de atualização de resultados
+• Área administrativa
+• Aplicação mobile
+• Integração com redes sociais
+• Sistema de notificações
+• Galeria de vídeos e fotos
+
+================================================================================
+                         📞 CONTACTOS
+================================================================================
+
+ASSOCIAÇÃO REGIONAL DE BASQUETEBOL DE SÃO VICENTE
+-------------------------------------------------
+📍 Endereço: São Vicente, Cabo Verde
+📧 Email: arbsv@email.com
+📞 Telefone: +238 123 4567
+
+REDES SOCIAIS:
+-------------
+• Facebook: (em desenvolvimento)
+• Instagram: (em desenvolvimento)
+• Twitter: (em desenvolvimento)
+
+================================================================================
+                           CONCLUSÃO
+================================================================================
+
+O website da ARBSV representa um marco importante na modernização e 
+promoção do basquetebol na região de São Vicente. Com uma plataforma 
+digital atualizada, profissional e responsiva, a associação podrá 
+alcançar novos patamares na divulgação desportiva e no envolvimento 
+com a comunidade.
+
+O projeto demonstra um compromisso com a excelência e com o 
+desenvolvimento do desporto regional, oferecendo aos adeptos, 
+jogadores e equipas uma experiência digital à altura das 
+expectativas modernas.
+
+================================================================================
+
+" Basquetebol de São Vicente - O Melhor Basquetebol de Cabo Verde "
+
+                    © 2026 ARBSV - Todos os direitos reservados
+
+================================================================================
